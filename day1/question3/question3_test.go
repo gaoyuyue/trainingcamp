@@ -1,9 +1,10 @@
 package main
 
 import (
-	"io.github.gaoyuyue.trainingcamp/day1/common"
+	"github.com/gaoyuyue/trainingcamp/day1/common"
 	"testing"
 )
+
 
 func TestConvert(t *testing.T) {
 	tests := []struct{
