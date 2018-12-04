@@ -28,19 +28,11 @@ func convert(a int, b int) []int {
 	var newResult []int
 
 	if result := convert(2 * a, b); result != nil {
-		newResult = addOne(result, a)
+		newResult = append(result, a)
 	}
 
 	if result := convert(10 * a + 1, b); result != nil {
-		newResult = addOne(result, a)
+		newResult = append(result, a)
 	}
-	return newResult
-}
-
-func addOne(result []int, a int) []int {
-	n := len(result)
-	newResult := make([]int, n+1)
-	copy(newResult, result)
-	newResult[n] = a
 	return newResult
 }

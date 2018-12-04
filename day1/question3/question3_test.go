@@ -23,21 +23,3 @@ func TestConvert(t *testing.T) {
 		}
 	}
 }
-
-func TestAddOne(t *testing.T) {
-	tests := []struct {
-		result    []int
-		e         int
-		newResult []int
-	}{
-		{[]int{1, 2, 3,}, 4, []int{1, 2, 3, 4,}},
-		{[]int{}, 1, []int{1}},
-	}
-
-	for _, test := range tests {
-		if newResult := addOne(test.result, test.e); !common.Equals(newResult, test.newResult) {
-			t.Errorf("Error: addOne input: %v %v expect: %v actual: %v ", test.result, test.e, test.newResult, newResult)
-		}
-	}
-}
-
