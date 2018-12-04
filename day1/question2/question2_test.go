@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/gaoyuyue/training/day1/common"
+	"github.com/gaoyuyue/trainingcamp/day1/common"
 	"testing"
 )
 
