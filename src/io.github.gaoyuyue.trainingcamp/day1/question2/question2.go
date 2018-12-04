@@ -14,12 +14,7 @@ func main() {
 		fmt.Scanf("%d", &b[i])
 	}
 
-	sum := 0
-	for i := 0; i < n; i++ {
-		t := a[i]
-		a[i] += sum
-		sum += t
-	}
+	a = convert(n, a)
 
 	for i := 0; i < m; i++ {
 		f := binarySearch(a, b[i])
@@ -29,8 +24,18 @@ func main() {
 		} else {
 			k = b[i]
 		}
-		fmt.Printf("%d %d \n", f + 1, k)
+		fmt.Printf("%d %d \n", f+1, k)
 	}
+}
+
+func convert(n int, a []int) []int {
+	sum := 0
+	for i := 0; i < n; i++ {
+		t := a[i]
+		a[i] += sum
+		sum += t
+	}
+	return a
 }
 
 func binarySearch(arr []int, e int) int {

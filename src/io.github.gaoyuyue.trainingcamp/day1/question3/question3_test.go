@@ -1,6 +1,7 @@
 package main
 
 import (
+	"io.github.gaoyuyue.trainingcamp/day1/common"
 	"testing"
 )
 
@@ -16,7 +17,7 @@ func TestConvert(t *testing.T) {
 	}
 	
 	for _,test := range tests {
-		if result := convert(test.a, test.b); !equal(result, test.result) {
+		if result := convert(test.a, test.b); !common.Equals(result, test.result) {
 			t.Errorf("Error: convert input: %v %v expect: %v actual: %v ", test.a, test.b, test.result, result)
 		}
 	}
@@ -33,20 +34,9 @@ func TestAddOne(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		if newResult := addOne(test.result, test.e); !equal(newResult, test.newResult) {
+		if newResult := addOne(test.result, test.e); !common.Equals(newResult, test.newResult) {
 			t.Errorf("Error: addOne input: %v %v expect: %v actual: %v ", test.result, test.e, test.newResult, newResult)
 		}
 	}
 }
 
-func equal(x, y []int) bool {
-	if len(x) != len(y) {
-		return false
-	}
-	for i := range x {
-		if x[i] != y[i] {
-			return false
-		}
-	}
-	return true
-}
