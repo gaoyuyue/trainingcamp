@@ -51,10 +51,7 @@ func calMaxConLen(nums []int) int {
 		maxBegin = begin
 		maxEnd = n - 1
 	}
-	if maxBegin == 0 {
-		return maxSize - 1
-	}
-	if maxEnd == n - 1 && nums[maxEnd] == 1000 {
+	if maxBegin == 0 && nums[0] == 1 || maxEnd == n - 1 && nums[maxEnd] == 1000{
 		return maxSize - 1
 	}
 	return  maxSize - 2

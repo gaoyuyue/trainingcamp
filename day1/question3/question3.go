@@ -24,15 +24,13 @@ func convert(a int, b int) []int {
 	} else if a > b {
 		return nil
 	}
-
 	var newResult []int
-
-	if result := convert(2 * a, b); result != nil {
-		newResult = append(result, a)
-	}
-
-	if result := convert(10 * a + 1, b); result != nil {
-		newResult = append(result, a)
+	r1 := convert(2 * a, b)
+	r2 := convert(10 * a + 1, b)
+	if r1 != nil {
+		newResult = append(r1, a)
+	} else if r2 != nil {
+		newResult = append(r2, a)
 	}
 	return newResult
 }
